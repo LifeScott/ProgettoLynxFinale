@@ -1,0 +1,11 @@
+<div >
+  <h3>HEADER</h3>
+</div>
+<div>
+  <form [formGroup]="myForm" class="form"  (ngSubmit)="doLogin()">
+    <input formControlName="name" type="text" placeholder="Inserisci nome"><br><br>
+    <input formControlName="password" type="password"placeholder="Password"><br><br>
+    <button type="submit" [disabled]="myForm.status === 'INVALID'">Submit</button>
+
+  </form>
+</div>
