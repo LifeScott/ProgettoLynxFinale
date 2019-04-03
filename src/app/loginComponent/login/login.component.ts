@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/Service/login.service';
 })
 export class LoginComponent implements OnInit {
     myForm : FormGroup;
+    errore : string;
   constructor(private fb : FormBuilder, private loginService : LoginService ) { }
 
   ngOnInit() {
