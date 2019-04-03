@@ -1,3 +1,27 @@
-<p>
-  register works!
-</p>
+<form>
+  <div> 
+    <label for="usernameInput">Crea Username</label>
+    <input id="usernameInput" #user>
+  </div>
+ 
+  <div> 
+  <label for="emailInput">Crea @mail</label>
+  <input id="emailInput" #mail>
+</div>
+
+<div> 
+  <label for="yypasswordInput">Crea Password</label>
+  <input id="passwordInput" [(ngModel)]="password">
+</div>
+
+<div> 
+  <label for="passwordReInput">Conferma Password</label>
+  <input id="passwordReInput" [(ngModel)]="confermapassword">
+</div>
+
+<div> 
+  <button (click)="doRegister()">Registrati</button>
+</div>
+
+</form>
+
