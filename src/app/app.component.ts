@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProgettoLynxFinale';
+
+  idSectionToShow: number = 1;
+
+  changeSection(id: number) {
+    this.idSectionToShow = id;
+}
 }

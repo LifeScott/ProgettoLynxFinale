@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeText(value:string){
+    document.getElementById('pText').innerHTML = value;
   }
 
 }
