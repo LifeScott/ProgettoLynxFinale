@@ -6,7 +6,7 @@ import { LoginService } from 'src/app/Service/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
     myForm : FormGroup;
@@ -28,7 +28,10 @@ getInputName() : FormControl{
 getInputPassword() : FormControl{
   return this.myForm.get('password') as FormControl;
 }
-doLogin(){
+callLogin(){
 this.loginService.doLogin(this.getInputName().value , this.getInputPassword().value);
+}
+toRegPage(){
+  this.loginService.regPage();
 }
 }
