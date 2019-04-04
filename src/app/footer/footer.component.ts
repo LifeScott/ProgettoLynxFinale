@@ -12,6 +12,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  id:string;
+  goToPage(page :string){
+    window.open("https://www."+page+".com");
+  }
   
 }

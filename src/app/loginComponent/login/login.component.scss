@@ -11,8 +11,13 @@ section {
     border-color: white;
 }
 
+i {
+    color: white;
+}
+
 img {
     width: 50%;
+    margin-left: 68px
 }
 
 .material-icons.md-48 {
@@ -61,10 +66,14 @@ label {
     border-radius: 50px;
 }
 
+.btn:valid {
+    color: white;
+}
+
 #btn {
     border-radius: 100%;
     position: relative;
-    bottom: 250px;
+    bottom: 330px;
     left: 285px;
     padding-top: 5px;
     padding-bottom: 5px;

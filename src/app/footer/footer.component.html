@@ -1,14 +1,19 @@
-<ul id="footerlist">
-    <li id="facebook">
-        <a (click)="goToPage"><img src="assets/facebook.png"></a>
-    </li>
-    <li id="instagram">
-        <a ng-href="http://www.instagram.com"></a><img src="assets/instagram.png"></li>
-    <li id="twitter">
-        <a ng-href="http://www.twitter.com"></a><img src="assets/twitter.png"></li>
-    <li id="pinterest">
-        <a ng-href="http://www.pinterest.com"></a><img src="assets/pinterest.png"></li>
-    <li>
-        <p>Copyright 2019 | Lynx s.p.a</p>
-    </li>
-</ul>
+<footer>
+    <ul id="footerlist">
+        <li id="facebook">
+            <a (click)="goToPage('facebook')"><img src="assets/facebook.png"></a>
+        </li>
+        <li id="instagram">
+            <a (click)="goToPage('instagram')"><img src="assets/instagram.png"></a>
+        </li>
+        <li id="twitter">
+            <a (click)="goToPage('twitter')"><img src="assets/twitter.png"></a>
+        </li>
+        <li id="pinterest">
+            <a (click)="goToPage('pinterest')"><img src="assets/pinterest.png"></a>
+        </li>
+        <li>
+            <p>Copyright 2019 | Lynx s.p.a</p>
+        </li>
+    </ul>
+</footer>
