@@ -8,6 +8,8 @@ import { LoginService } from '../Service/login.service';
   styleUrls: ['./menu.component.sass']
 })
 export class MenuComponent implements OnInit {
+  //"**/*.spec.ts",
+  //"**/*.d.ts",
 
   name: string;
   menuList: MenuItem[] = [
