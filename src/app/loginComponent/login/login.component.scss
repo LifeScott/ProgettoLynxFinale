@@ -1,0 +1,68 @@
+section {
+    width: 300px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-image: linear-gradient(90deg, #011e29, #4b81ac);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+}
+
+img {
+    width: 50%;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+p {
+    color: orange
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-top: 20px;
+    padding-right: 130px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+}
+
+.btn {
+    width: 100%;
+    background: none;
+    border: 2px solid #4c85b4;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+    border-radius: 50px;
+}
+
+#btn {
+    border-radius: 100%;
+    position: relative;
+    bottom: 250px;
+    left: 285px;
+    padding-top: 5px;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(0deg, #011e29, #4b81ac);
+}
+
+input.ng-invalid.ng-dirty {
+    border: 1px solid red;
+}

@@ -5,22 +5,26 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MenuComponent } from './menu/menu.component';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { CardsComponent } from './cards/cards.component';
 import { ListaComponent } from './lista/lista.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ProfiloComponent } from './profilo/profilo.component';
-import { EsciComponent } from './esci/esci.component';
 import { FooterComponent } from './footer/footer.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { LoginComponent } from './loginComponent/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { LoginService } from './Service/login.service';
+import { AuthGuard } from './authGuard';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes:Routes=[
   { path: 'login', component: LoginComponent },
-  { path: 'homepage', component: HomepageComponent},
-  { path: 'lista', component: ListaComponent},
-  { path: 'cards', component: CardsComponent},
-  { path: 'feedback', component: FeedbackComponent},
-  { path: 'profilo', component: ProfiloComponent},
-  { path: 'esci', component: EsciComponent},
+  { path: 'registrazione', component: RegisterComponent , canActivate:[AuthGuard] },
+  { path: 'homepage', component: HomepageComponent , canActivate:[AuthGuard]},
+  { path: 'lista', component: ListaComponent , canActivate:[AuthGuard]},
+  { path: 'cards', component: CardsComponent , canActivate:[AuthGuard]},
+  { path: 'feedback', component: FeedbackComponent , canActivate:[AuthGuard]},
+  { path: 'profilo', component: ProfiloComponent , canActivate:[AuthGuard]},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -28,20 +32,22 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     HomepageComponent,
+    RegisterComponent,
     MenuComponent,
-    LoginComponent,
     ListaComponent,
     CardsComponent,
     FeedbackComponent,
     ProfiloComponent,
-    EsciComponent,
+    LoginComponent,
     FooterComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

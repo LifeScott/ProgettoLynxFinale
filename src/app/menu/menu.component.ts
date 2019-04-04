@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { MenuItem } from 'src/app/model/menu-item';
+import { LoginService } from '../Service/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,21 +15,27 @@ export class MenuComponent implements OnInit {
     { id: 2, descrizione: 'Lista', selezionato: false, linkPath: 'lista' },
     { id: 3, descrizione: 'Cards', selezionato: false, linkPath: 'cards' },
     { id: 4, descrizione: 'Feedback', selezionato: false, linkPath: 'feedback' },
-    { id: 5, descrizione: 'Profilo', selezionato: false, linkPath: 'profilo' },
-    { id: 6, descrizione: 'Esci', selezionato: false, linkPath: 'esci' }
+    { id: 5, descrizione: 'Profilo', selezionato: false, linkPath: 'profilo' }
+    
   ];
-
+  menulogout : MenuItem ;
   @Output('showSection')
   showSectionEvent: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  constructor(private service  : LoginService) { }
 
   ngOnInit() {
   }
 
+ logout(){
+   this.service.doLogout();
+ }
   
   showSection(id: number) {
     this.showSectionEvent.emit(id);
+  
   }
+
+  
 
 }
