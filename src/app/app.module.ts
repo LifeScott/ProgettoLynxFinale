@@ -19,7 +19,7 @@ import { RegisterComponent } from './register/register.component';
 
 const appRoutes:Routes=[
   { path: 'login', component: LoginComponent },
-  { path: 'registrazione', component: RegisterComponent , canActivate:[AuthGuard] },
+  { path: 'registrazione', component: RegisterComponent  },
   { path: 'homepage', component: HomepageComponent , canActivate:[AuthGuard]},
   { path: 'lista', component: ListaComponent , canActivate:[AuthGuard]},
   { path: 'cards', component: CardsComponent , canActivate:[AuthGuard]},

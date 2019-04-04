@@ -29,6 +29,6 @@ doLogin(name : string , pass : string) : void{
     return (!! sessionStorage.getItem('user'));
   }
   regPage(){
-    this.router.navigateByUrl('registrazione');
+    this.router.navigateByUrl('/registrazione');
   }
 }
