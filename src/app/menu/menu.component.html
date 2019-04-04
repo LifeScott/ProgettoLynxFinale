@@ -1,8 +1,8 @@
 <nav>
     <ul>
         <li *ngFor="let item of menuList" (click)="showSection(item.id)" [routerLink]="item.linkPath">{{item.descrizione}}</li>
-        <li><button id="logout" (click)="logout()">Logout</button></li>
         <li class="logoPosition"><img id="logo" src="assets/Logo.png"></li>
+        <li><button id="logout" (click)="logout()">Logout</button></li>
     </ul>
 
 </nav>
