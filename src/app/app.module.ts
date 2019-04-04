@@ -11,6 +11,7 @@ import { ListaComponent } from './lista/lista.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ProfiloComponent } from './profilo/profilo.component';
 import { EsciComponent } from './esci/esci.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes:Routes=[
   { path: 'login', component: LoginComponent },
@@ -33,7 +34,8 @@ const appRoutes:Routes=[
     CardsComponent,
     FeedbackComponent,
     ProfiloComponent,
-    EsciComponent
+    EsciComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
