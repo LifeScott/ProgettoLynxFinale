@@ -11,7 +11,7 @@ public loginsEvent$ = this.loginEvent.asObservable();
   constructor(private router : Router) { }
 
 
-
+  
 doLogin(name : string , pass : string) : void{
     if(name.length > 2 && pass.length > 4)
     sessionStorage.setItem('user', name);
