@@ -46,8 +46,8 @@ export class FeedbackComponent implements OnInit {
   }
 
   sendEmail(){
-    let link = 'mailto:scottthushyanthan@gmail.com?subject=Message from '+document.getElementsByName('email')
-    +'&body='+this.getInputEmail;
+    let link = 'mailto:scottthushyanthan@gmail.com?subject=Message from '+this.getInputEmail().value
+    +'&body='+"Nome:"+this.getInputName().value+"    Surname:"+this.getInputCognome().value+"       Email:"+this.getInputEmail().value+"        Comment:"+this.getInputCommento().value;
     window.location.href = link;
   }
 }
