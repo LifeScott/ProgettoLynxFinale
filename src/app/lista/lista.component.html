@@ -16,8 +16,17 @@
   </ng-template></button>
   
   <button> <i class="material-icons md-36">share</i></button>
-
-  <button><i class="material-icons md-36">menu</i></button>
+  <div class="dropdown">
+      <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
+      <div class="dropdown-content">
+        <ul>
+        <li [routerLink]="['/detail']" >Dettagli Anime</li>
+        </ul>
+        
+        
+      </div>
+    </div>
+  
     
 
 

@@ -18,6 +18,7 @@ import { AuthGuard } from './authGuard';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule, MatMenu} from '@angular/material';
+import { DettaglioComponent } from './dettaglio/dettaglio.component';
 
 const appRoutes:Routes=[
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,7 @@ const appRoutes:Routes=[
   { path: 'cards', component: CardsComponent , canActivate:[AuthGuard]},
   { path: 'feedback', component: FeedbackComponent , canActivate:[AuthGuard]},
   { path: 'profilo', component: ProfiloComponent , canActivate:[AuthGuard]},
+  {path :'detail', component : DettaglioComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
@@ -41,7 +43,8 @@ const appRoutes:Routes=[
     FeedbackComponent,
     ProfiloComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    DettaglioComponent
   ],
   imports: [
     BrowserModule,
