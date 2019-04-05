@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
@@ -6,10 +7,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.sass']
 })
 export class FeedbackComponent implements OnInit {
+  myForm : FormGroup;
+  errore : string;
 
-  constructor() { }
+  constructor(private fb : FormBuilder) { }
 
   ngOnInit() {
+    this.create();
   }
 
+  create(){
+    this.myForm = this.fb.group({
+      name : ['' , Validators.required], 
+      email : ['' , Validators.required], 
+      commento : ['' , Validators.required], 
+      cognome : ['' , Validators.required]
+  
+    });
+  }
+
+  getInputName() : FormControl{
+    return this.myForm.get('name') as FormControl;
+  }
+  getInputCognome() : FormControl{
+    return this.myForm.get('cognome') as FormControl;
+  }
+  getInputEmail() : FormControl{
+    return this.myForm.get('email') as FormControl;
+  }
+  getInputCommento() : FormControl{
+    return this.myForm.get('commento') as FormControl;
+  }
+  getInputTelefono() : FormControl{
+    return this.myForm.get('telefono') as FormControl;
+  }
+  getInputSesso() : FormControl{
+    return this.myForm.get('sesso') as FormControl;
+  }
+
+  sendEmail(){
+    let link = 'mailto:scottthushyanthan@gmail.com?subject=Message from '+document.getElementsByName('email')
+    +'&body='+this.getInputEmail;
+    window.location.href = link;
+  }
 }
