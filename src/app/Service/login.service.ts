@@ -6,30 +6,30 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class LoginService {
-private loginEvent : Subject<void> = new Subject<void>();
-public loginsEvent$ = this.loginEvent.asObservable();
-  constructor(private router : Router) { }
+  private loginEvent: Subject<void> = new Subject<void>();
+  public loginsEvent$ = this.loginEvent.asObservable();
+  constructor(private router: Router) { }
 
 
-  
-doLogin(name : string , pass : string) : void{
-    if(name.length > 2 && pass.length > 4)
-    sessionStorage.setItem('user', name);
+
+  doLogin(name: string, pass: string): void {
+    if (name.length > 2 && pass.length > 4)
+      sessionStorage.setItem('user', name);
     this.loginEvent.next();
     this.router.navigateByUrl('homepage');
+
   }
-  
-  doLogout(){
+
+  doLogout() {
     sessionStorage.clear();
     this.router.navigateByUrl('/login');
     this.loginEvent.next();
   }
 
-  checkLogin(){
-    this.loginEvent.next();
-    return (!! sessionStorage.getItem('user'));
+  checkLogin() {
+    return (!!sessionStorage.getItem('user'));
   }
-  regPage(){
+  regPage() {
     this.router.navigateByUrl('/registrazione');
   }
 }

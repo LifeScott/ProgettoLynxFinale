@@ -8,14 +8,19 @@ import { LoginService } from './Service/login.service';
 })
 export class AppComponent {
   title = 'ProgettoLynxFinale';
-
+  showmenu : boolean ;
   idSectionToShow: number = 1;
 
   changeSection(id: number) {
     this.idSectionToShow = id;
   }
 
-  constructor() { }
+  constructor(private service : LoginService) { 
+    this.showmenu = this.service.checkLogin();
+    this.service.loginsEvent$.subscribe(() =>{
+      this.showmenu = this.service.checkLogin();
+    })
+  }
 } 
 
 
