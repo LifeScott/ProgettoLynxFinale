@@ -1,3 +1,33 @@
-<p>
-  lista works!
-</p>
+<div class="lista1">
+  <label class="label1">Cerca per genere </label>
+  <select class="select" [(ngModel)]="genere" (change)="filterLista()">
+    <option value="1">Avventura</option>
+    <option value="2">Azione</option>
+    <option value="3">Romantico</option>
+  </select>
+</div>
+<div class="lista" *ngFor="let anime of filtered">
+  <label>Id Anime : </label>
+  {{anime.getId()}} <br>
+  <label>Titolo : </label>{{anime.getTitolo() | uppercase}}
+  <button (click)="isFavorite(anime)">  <i  *ngIf ="anime.getFavorite(); else unf" class="material-icons md-36">favorite</i> 
+  <ng-template #unf>
+      <i class="material-icons md-36">favorite_border</i>
+  </ng-template></button>
+  
+  <button> <i class="material-icons md-36">share</i></button>
+  <div class="dropdown">
+      <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
+      <div class="dropdown-content">
+        <ul>
+        <li [routerLink]="['/detail']" >Dettagli Anime</li>
+        </ul>
+        
+        
+      </div>
+    </div>
+  
+    
+
+
+</div>
