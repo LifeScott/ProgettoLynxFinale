@@ -26,6 +26,7 @@ doLogin(name : string , pass : string) : void{
   }
 
   checkLogin(){
+    this.loginEvent.next();
     return (!! sessionStorage.getItem('user'));
   }
   regPage(){

@@ -20,13 +20,20 @@ export class MenuComponent implements OnInit {
     { id: 5, descrizione: 'Profilo', selezionato: false, linkPath: 'profilo' }
     
   ];
-  menulogout : MenuItem ;
+  menulogout : boolean ;
+  //fare subscribe e ngIf
   @Output('showSection')
   showSectionEvent: EventEmitter<number> = new EventEmitter();
-
-  constructor(private service  : LoginService) { }
+  
+  constructor(private service  : LoginService) {
+    this.menulogout = this.service.checkLogin();
+    this.service.loginsEvent$.subscribe(() =>{
+      this.menulogout = this.service.checkLogin();
+    });
+   }
 
   ngOnInit() {
+    
   }
 
  logout(){

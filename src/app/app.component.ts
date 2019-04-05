@@ -13,14 +13,9 @@ export class AppComponent {
 
   changeSection(id: number) {
     this.idSectionToShow = id;
-}
-  menu: boolean;
-  constructor(private loginservice : LoginService){
-   this.loginservice.loginsEvent$.subscribe(() =>{
-     this.menu = this.loginservice.checkLogin();
-   });
-    
-
   }
 
-}
+  constructor() { }
+} 
+
+
