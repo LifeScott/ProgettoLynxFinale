@@ -8,7 +8,8 @@
 </div>
 <div class="lista" *ngFor="let anime of filtered">
   <label>Id Anime : </label>
-  {{anime.getId()}} <br>
+  {{anime.id}} <br>
+  <img src ="{{anime.imgpath}}">
   <label>Titolo : </label>{{anime.getTitolo() | uppercase}}
   <button (click)="isFavorite(anime)">  <i  *ngIf ="anime.getFavorite(); else unf" class="material-icons md-36">favorite</i> 
   <ng-template #unf>
@@ -19,13 +20,14 @@
   <div class="dropdown">
       <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
       <div class="dropdown-content">
-        <ul>
-        <li [routerLink]="['/detail']" >Dettagli Anime</li>
-        </ul>
+       <ul>
+         <li class="coll" routerLink="/detail/{{anime.id}}" routerLinkActive="router-link-active">Dettagli </li>
+       </ul>
+        
         
         
       </div>
-    </div>
+    
   
     
 

@@ -28,7 +28,7 @@ const appRoutes:Routes=[
   { path: 'cards', component: CardsComponent , canActivate:[AuthGuard]},
   { path: 'feedback', component: FeedbackComponent , canActivate:[AuthGuard]},
   { path: 'profilo', component: ProfiloComponent , canActivate:[AuthGuard]},
-  {path :'detail', component : DettaglioComponent},
+  {path :'detail/:id', component : DettaglioComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
