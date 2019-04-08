@@ -38,4 +38,8 @@ export class RegisterComponent implements OnInit {
     this.userservice.registration(this.registerForm.value);
   }
 
+  toLogPage(){
+    this.userservice.toLogPage();
+  }
+
 }
