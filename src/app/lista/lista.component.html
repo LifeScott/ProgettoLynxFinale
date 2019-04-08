@@ -6,10 +6,15 @@
     <option value="3">Romantico</option>
   </select>
 </div>
+<div class="lista1">
+    <label class="label1">Cerca per Nome </label>
+    <input id="cerca" type="text" #value placeholder="Search" (keyup)="filterByName(value.value)">
+</div>
 <div class="wrapper" *ngFor="let anime of filtered">
     <div class="box a">
-        <label id="idAnime">Id Anime : {{anime.getId()}}</label>
+        <label id="idAnime">Id Anime : {{anime.id}}</label>
     </div>
+    <img class="d" src="{{anime.imgpath}}">
     <div class="box b">
         <label id="titolo">Titolo : {{anime.getTitolo() | uppercase}}</label>
     </div>
@@ -26,7 +31,7 @@
             <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
             <div class="dropdown-content">
                 <ul>
-                    <li [routerLink]="['/detail']">Dettagli</li>
+                    <li routerLink="/detail/{{anime.id}}" routerLinkActive="router-link-active">Dettagli</li>
                 </ul>
             </div>
         </div>

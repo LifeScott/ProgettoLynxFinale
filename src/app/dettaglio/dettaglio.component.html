@@ -1,3 +1,7 @@
-<p>
-  dettaglio works!
-</p>
+<div *ngIf="anime" class="dettaglio">
+  {{anime.getTitolo() | uppercase}} , {{anime?.getDesc() | lowercase}}
+<img src="{{anime.imgpath}}">
+
+
+  <button (click)="goBack()"> Torna alla lista</button>
+</div>
