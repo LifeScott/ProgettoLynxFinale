@@ -21,7 +21,7 @@ create(){
     name : ['' , Validators.required], 
     password : ['' , Validators.required]
 
-  })
+  });
 }
 getInputName() : FormControl{
   return this.myForm.get('name') as FormControl;
