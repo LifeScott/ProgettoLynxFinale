@@ -1,0 +1,66 @@
+@import "../../assets/scss/mixins";
+.profilo {
+    margin-top: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 705px;
+}
+
+.profile-grid {
+    @include display-grid((1fr 0.01fr 1fr), (50px 50px 50px 50px 50px));
+    margin-top: 20px;
+}
+
+.label-cell {
+    @include grid-column(1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.color-cell {
+    @include grid-column(2);
+    background-color: white;
+    width: 1px
+}
+
+.value-cell {
+    @include grid-column(3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.name-cell {
+    @include grid-row(1);
+}
+
+.surname-cell {
+    @include grid-row(2);
+}
+
+.gender-cell {
+    @include grid-row(3);
+}
+
+.email-cell {
+    @include grid-row(4);
+}
+
+.phone-cell {
+    @include grid-row(5);
+}
