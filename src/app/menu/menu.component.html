@@ -1,0 +1,12 @@
+<ng-container *ngIf="menulogout">
+    <nav>
+        <ul>
+            <li id="scritte" *ngFor="let item of menuList" (click)="showSection(item.id)" [routerLink]="item.linkPath">{{item.descrizione}}</li>
+            <li class="logoPosition"><img id="logo" src="assets/Logo.png"></li>
+            <li><button id="logout" (click)="logout()">Logout</button></li>
+        </ul>
+
+    </nav>
+    
+    
+</ng-container>
