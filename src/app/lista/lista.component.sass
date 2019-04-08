@@ -1,72 +1,111 @@
 .lista 
-   
-    
     color: orange
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
     font-weight: bold
     margin-top: 100px
-    border : 2px solid black
-    
+    background-image: linear-gradient(-90deg, #3acfd5, #3a4ed5)
+    border: 2px solid white
+    padding: 20px
+
 button
-    border-radius: 20%
+    border-radius: 100px
     cursor: pointer
-    margin: 10px
-    margin-top: 40px
+    margin-left: 100px
+    color: #3a4ed5
 
 label 
     color : white
+    font-size: 30px
+
+#bottoni
+    display: inline 
 
 .select
-    border-radius: 20%
-    margin-top : 30px
+    margin-top: 30px
     align-content: center
     width: 160px
+    background-color: white
+    border-radius: 100px
+
+
 .label1
-    
-    text-align: center
     color : white
-    font-weight: bold
-    font-size: 29px
+    font-size: 20px
+
 .lista1
-    color: orange
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    margin-top: 70px
     font-weight: bold
-    margin-top: 100px
-    text-align: center
+    padding-left: 20px
+    border-radius: 100px
+    margin-bottom: -30px
+
+#cerca
+    border-radius: 100px
+    padding-right: 16px
+
 
 .dropbtn 
   background-color:transparent
-  color: black
-  margin: 10px
-  margin-top: 40px
-
+  color: #3a4ed5
 
 .dropdown 
   display: inline-block
 
-
-
 .dropdown-content 
   display: none
   position: absolute
-  background-color: transparent
-  min-width: 160px
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  background-color: white
+  padding: 0
+  margin: 0
+  cursor: pointer
+  min-width: 150px
   z-index: 1
+  font-size: 15px
 
+ul 
+    list-style-type: none
 
-.dropdown-content a 
-  color: white
-  padding: 12px 16px
-  text-decoration: none
-  display: block
-
-
-.dropdown-content a:hover 
-    background-color: lightblue 
+.dropdown-content li:hover 
+    color: #3acfd5 
 
 .dropdown:hover .dropdown-content 
     display: block
 
 .dropdown:hover .dropbtn 
     background-color: transparent
+
+.wrapper 
+  display: grid
+  grid-template-columns: 400px auto 100px 500px
+  grid-template-rows: 150px
+
+.box 
+  padding: 20px  
+  background-image: linear-gradient(0, #3acfd5, #3a4ed5)
+  font-size: 150%
+  
+.a 
+  grid-column: 1 / 4
+  grid-row: 1
+  align-self: center
+
+
+.b 
+  grid-column: 2 / 4
+  grid-row: 1
+  align-self: center
+
+
+.c 
+  padding: 22px  
+  grid-column: 4 / 4
+  grid-row: 1
+  align-self: center
+
+.d
+  grid-column: 3 / 4
+  grid-row: 1
+  align-self: center
+
+img 
+    width: 100px
+    z-index: 500
