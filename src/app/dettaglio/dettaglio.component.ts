@@ -22,8 +22,6 @@ export class DettaglioComponent implements OnInit {
 
     this.anime = this.listService.getAnimeById(id);
 
-    
-
   }
 
   goBack(){
