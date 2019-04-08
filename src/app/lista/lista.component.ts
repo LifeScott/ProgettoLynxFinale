@@ -12,6 +12,7 @@ export class ListaComponent implements OnInit {
   lista: AnimeItem[];
   genere: number;
   filtered: AnimeItem[];
+  
   constructor(private service: ListService) { }
 
   ngOnInit() {
@@ -32,5 +33,11 @@ export class ListaComponent implements OnInit {
   }
   isFavorite(anime : AnimeItem){
     anime.favorite = ! anime.favorite;
+  }
+
+  filterByName(searchedstring : string){
+    this.filtered = this.lista.filter(item =>{
+      return !searchedstring || searchedstring === '' || item.getTitolo().toLowerCase().indexOf(searchedstring.toLowerCase()) !== -1;
+    })
   }
 }

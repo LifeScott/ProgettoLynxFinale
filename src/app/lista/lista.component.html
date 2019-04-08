@@ -6,6 +6,10 @@
     <option value="3">Romantico</option>
   </select>
 </div>
+<div >
+    <label class="label1">Cerca per Nome </label>
+  <input class="select" type="text" #value placeholder="Search" (keyup)="filterByName(value.value)" >
+</div>
 <div class="lista" *ngFor="let anime of filtered">
   <label>Id Anime : </label>
   {{anime.id}} <br>
