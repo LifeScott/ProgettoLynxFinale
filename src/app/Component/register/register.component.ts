@@ -6,7 +6,7 @@ import { User } from 'src/app/models/user.class';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.sass']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
@@ -37,6 +37,5 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.userservice.registration(this.registerForm.value);
   }
-  // toRegPage(){
-  // this.UserService.logPage();
+
 }

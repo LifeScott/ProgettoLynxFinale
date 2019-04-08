@@ -1,53 +1,42 @@
 <section>
-    <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-    <form [formGroup]="register" (ngSubtim)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-        <!-- ------------------------------------------------------------------------------------------------------------------------------- -->
         <div>
             <img id="logo" src="assets/Logo.png">
         </div>
-        <input formControlName="firstname" placeholder="Firstname">
-        <p [hidden]="register.get('firstname').status === 'VALID' || register.get('firstname').pristine">Nome
+        <input formControlName="firstname" placeholder="Nome">
+        <p [hidden]="registerForm.get('firstname').status === 'VALID' || registerForm.get('firstname').pristine">Nome
             obbligatorio</p>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <div>
             <img id="logo" src="assets/Logo.png">
-        </div>
-        <input formControlName="lastname" placeholder="Lastname">
-        <p [hidden]="register.get('lastname').status === 'VALID' || register.get('lastname).pristine">Cognome
+        </div>S
+        <input formControlName="lastname" placeholder="Cognome">
+        <p [hidden]="registerForm.get('lastname').status === 'VALID' || registerForm.get('lastname').pristine">Cognome
             obbligatorio</p>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <div>
             <img id="logo" src="assets/Logo.png">
         </div>
-        <input formControlName="gender" placeholder="Gender">
-        <p [hidden]="register.get('gender').status === 'VALID' || register.get('gender).pristine">Genere obbligatorio
+        <input formControlName="gender" placeholder="Genere">
+        <p [hidden]="registerForm.get('gender').status === 'VALID' || registerForm.get('gender').pristine">Genere obbligatorio
         </p>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
         <div>
             <img id="logo" src="assets/Logo.png">
         </div>
         <input formControlName="email" placeholder="Email">
-        <p [hidden]="register.get('email').status === 'VALID' || register.get('email').pristine">Email obbligatoria</p>
+        <p [hidden]="registerForm.get('email').status === 'VALID' || registerForm.get('email').pristine">Email obbligatoria</p>
 
-        <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
         <div>
             <img id="logo" src="assets/Logo.png">
         </div>
-        <input formControlName="telephone" placeholder="Email">
-        <p [hidden]="register.get('telephone').status === 'VALID' || register.get('telephone').pristine">Email
-            obbligatoria</p>
-        <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+        <input formControlName="telephone" placeholder="Telefono">
+        <p [hidden]="registerForm.get('telephone').status === 'VALID' || registerForm.get('telephone').pristine">Telefono
+            obbligatorio</p>
         <div>
             <img id="logo" src="assets/Logo.png">
         </div>
         <input formControlName="password" placeholder="Password">
-        <p [hidden]="register.get('password').status === 'VALID' || register.get('password').pristine">Email
+        <p [hidden]="registerForm.get('password').status === 'VALID' || registerForm.get('password').pristine">Password
             obbligatoria</p>
-
-        <!-- --------------------------------------------------------------------------------------------------------------------------------    -->
-
-        <button type="submit" class='btn' [disabled]="register.status === 'INVALID'">Submit</button>
-        <!-- -------------------------------------------------------------------------------------------------------------------------------------  -->
+        <button type="submit" class='btn' [disabled]="registerForm.status === 'INVALID'">Submit</button>
     </form>
 </section>

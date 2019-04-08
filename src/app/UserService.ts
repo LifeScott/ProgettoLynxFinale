@@ -20,7 +20,7 @@ export class UserService {
       }
       currentUsers.push(formValue);
       localStorage.setItem('registerUsers', JSON.stringify(currentUsers));
-//this.router.navigateByUrl('');
+      this.router.navigateByUrl('login');
     }
   }
 }
