@@ -6,15 +6,11 @@
         <form class="myForm" [formGroup]="myForm" (ngSubmit)="callLogin()">
             <div>
 
-
                 <i class="material-icons md-36">person</i><input formControlName="name" type="text" placeholder="Inserisci nome">
                 <p [hidden]="myForm.get('name').status === 'VALID' || myForm.get('name').pristine ">Nome obbligatorio</p>
             </div>
-
             <div>
-
                 <i class="material-icons md-36">lock</i><input formControlName="password" type="password" placeholder="Password">
-
             </div>
             <button type="submit" class="btn" [disabled]="myForm.status === 'INVALID'">Accedi</button>
 
