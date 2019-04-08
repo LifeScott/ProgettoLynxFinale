@@ -22,6 +22,9 @@ export class UserService {
       localStorage.setItem('registerUsers', JSON.stringify(currentUsers));
       this.router.navigateByUrl('login');
     }
+    
+
+    
   }
 }
 

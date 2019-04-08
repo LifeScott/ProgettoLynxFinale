@@ -31,5 +31,7 @@
             Password
             obbligatoria</p>
         <button type="submit" class='btn' [disabled]="registerForm.status === 'INVALID'">Registrati</button>
+
+        <button id="btn" (click)="toLogPage()"><i class="material-icons md-48">clear</i></button>
     </form>
 </section>
