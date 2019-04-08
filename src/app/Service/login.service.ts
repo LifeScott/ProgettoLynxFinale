@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { User } from '../models/user.class';
+import { UserService } from '../UserService';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +10,22 @@ import { Router } from '@angular/router';
 export class LoginService {
   private loginEvent: Subject<void> = new Subject<void>();
   public loginsEvent$ = this.loginEvent.asObservable();
-  constructor(private router: Router) { }
+  users: User[];
+  constructor(private router: Router, private userService: UserService) { }
 
 
 
   doLogin(name: string, pass: string): void {
-    if (name.length > 2 && pass.length > 4)
-      sessionStorage.setItem('user', name);
-    this.loginEvent.next();
-    this.router.navigateByUrl('homepage');
+    this.users = this.userService.retrieveRegisteredUsers();
+    const userToLogged = this.users.find(item => {
+      return name === item.firstname;
+    });
+
+    if (userToLogged) {
+      sessionStorage.setItem('user', JSON.stringify(userToLogged));
+      this.loginEvent.next();
+      this.router.navigateByUrl('homepage');
+    }
 
   }
 

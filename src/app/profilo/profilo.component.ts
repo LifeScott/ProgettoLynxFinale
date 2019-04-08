@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user.class';
 
 @Component({
   selector: 'app-profilo',
@@ -6,18 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profilo.component.scss']
 })
 export class ProfiloComponent implements OnInit {
-nome : string;
-
+  user: User;
 
   constructor() { }
 
   ngOnInit() {
-this.retrieveData();
+    this.retrieveData();
 
   }
-retrieveData(){
-  this.nome = sessionStorage.getItem('user');
+  retrieveData() {
+    if (sessionStorage.getItem('user')) {
+      this.user = JSON.parse(sessionStorage.getItem('user'));
+    }
+  }
 
 
-}
+
 }

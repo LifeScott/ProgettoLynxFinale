@@ -11,26 +11,25 @@ export class UserService {
 
   registration(formValue: User) {
     if (formValue) {
-      let currentUsers: User[];
-      const currentUsersFromLS = localStorage.getItem('registerUsers');
-      if (currentUsersFromLS) {
-        currentUsers = JSON.parse(currentUsersFromLS);
-      }else{
-        currentUsers = [];
-      }
+      let currentUsers: User[] = this.retrieveRegisteredUsers();
       currentUsers.push(formValue);
       localStorage.setItem('registerUsers', JSON.stringify(currentUsers));
       this.router.navigateByUrl('login');
     }
-
-   
-    
-    
-   
-    
   }
-  toLogPage(){
-    this.router.navigateByUrl('/login');}
+
+  retrieveRegisteredUsers(): User[] {
+    const currentUsersFromLS = localStorage.getItem('registerUsers');
+    if (currentUsersFromLS) {
+      return JSON.parse(currentUsersFromLS);
+    } else {
+      return [];
+    }
+  }
+
+  toLogPage() {
+    this.router.navigateByUrl('/login');
+  }
 }
 
 
