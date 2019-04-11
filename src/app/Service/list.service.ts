@@ -7,7 +7,7 @@ import { AnimeItem } from '../model/anime';
 export class ListService {
 
   lista : Array<AnimeItem> = [
-    new AnimeItem("Fairy Tail",1,false,"assets/ff.jpg","","anime bello bello carino e simpatico e wowowowowowowowo wjf jf fdjhgorwu gwougyiwuhoi gwiyuhoijew gwguyiuhoijwfe weggyiuhoijwfe yie fyegfyuetf8egfy fgf fgf gr rieeie "),
+    new AnimeItem("Fairy Tail",1,false,"assets/ff.jpg","","anime bello carino e simpatico"),
     new AnimeItem("One Piece",2,false,"assets/download.jpg"),
     new AnimeItem("Bleach",3,false,"assets/bleach.jpg")
   ]
