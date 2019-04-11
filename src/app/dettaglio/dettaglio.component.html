@@ -1,8 +1,11 @@
 <div *ngIf="anime" class="dettaglio">
     {{anime.getTitolo() | uppercase}}
     <hr>
-    <img src="{{anime.imgpath}}" class="img">
-    <div class="box">
+    <div>
+        <img src="{{anime.imgpath}}" class="img">
+    </div>
+
+    <div>
         <p class="descrizioneanime ">{{anime?.getDesc() | lowercase}}</p>
     </div>
     <button (click)="goBack() "> Torna alla lista</button>
