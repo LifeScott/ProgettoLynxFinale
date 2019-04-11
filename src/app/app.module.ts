@@ -15,10 +15,10 @@ import { LoginComponent } from './loginComponent/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from './Service/login.service';
 import { AuthGuard } from './authGuard';
-import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule, MatMenu} from '@angular/material';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
+import { RegisterComponent } from './Component/register/register.component';
 
 const appRoutes:Routes=[
   { path: 'login', component: LoginComponent },

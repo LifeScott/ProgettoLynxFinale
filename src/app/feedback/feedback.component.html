@@ -1,3 +1,52 @@
-<p>
-  feedback works!
-</p>
+<section>
+    <div>
+        <img id="logo" src="assets/Logo.png">
+    </div>
+    <div id="form">
+        <form class="myForm" [formGroup]="myForm" (ngSubmit)="sendEmail()">
+            <div>
+                <i class="material-icons md-36">person</i><input size="30" formControlName="name" type="text" placeholder="Nome">
+                <p [hidden]="myForm.get('name').status === 'VALID' || myForm.get('name').pristine ">Nome obbligatorio</p>
+            </div>
+            <div>
+                <i class="material-icons md-36">person</i><input size="30" formControlName="cognome" type="text" placeholder="Cognome">
+                <p [hidden]="myForm.get('cognome').status === 'VALID' || myForm.get('cognome').pristine ">Cognome obbligatorio
+                </p>
+            </div>
+            <div>
+                <i class="material-icons md-36">wc</i>
+            </div>
+            <div>
+                <select formControlName="sesso" form="form">
+          <option value="maschio" selected>Uomo</option>
+          <option value="femmina">Donna</option>
+        </select>
+            </div>
+
+            <div>
+
+                <i class="material-icons md-36">mail</i><input type="email" size="30" id="email" formControlName="email" placeholder="Email">
+                <p [hidden]="myForm.get('email').status === 'VALID' || myForm.get('email').pristine ">Email obbligatoria</p>
+
+            </div>
+
+            <div>
+
+                <i class="material-icons md-36">phone</i>
+
+            </div>
+            <div>
+                <input id="campiSpeciali" formControlName="telefono" type="tel" placeholder="Telefono">
+            </div>
+
+            <div>
+
+                <i class="material-icons md-36">comment</i><textarea size="30" class="commento" formControlName="commento" type="text" placeholder="Inserisci il testo qui..."></textarea>
+                <p [hidden]="myForm.get('commento').status === 'VALID' || myForm.get('commento').pristine ">Commento obbligatorio</p>
+            </div>
+
+            <button type="submit" class="btn" [disabled]="myForm.status === 'INVALID'">Invia</button>
+
+        </form>
+    </div>
+</section>

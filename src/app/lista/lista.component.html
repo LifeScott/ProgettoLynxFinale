@@ -1,39 +1,42 @@
 <div class="lista1">
-  <label class="label1">Cerca per genere </label>
-  <select class="select" [(ngModel)]="genere" (change)="filterLista()">
+    <label class="label1">Filtra per genere </label>
+    <select class="select" [(ngModel)]="genere" (change)="filterLista()">
     <option value="1">Avventura</option>
     <option value="2">Azione</option>
     <option value="3">Romantico</option>
   </select>
 </div>
-<div >
+<div class="lista1">
     <label class="label1">Cerca per Nome </label>
-  <input class="select" type="text" #value placeholder="Search" (keyup)="filterByName(value.value)" >
+    <input id="cerca" type="text" #value placeholder="Search" (keyup)="filterByName(value.value)">
 </div>
-<div class="lista" *ngFor="let anime of filtered">
-  <label>Id Anime : </label>
-  {{anime.id}} <br>
-  <img src ="{{anime.imgpath}}">
-  <label>Titolo : </label>{{anime.getTitolo() | uppercase}}
-  <button (click)="isFavorite(anime)">  <i  *ngIf ="anime.getFavorite(); else unf" class="material-icons md-36">favorite</i> 
-  <ng-template #unf>
-      <i class="material-icons md-36">favorite_border</i>
-  </ng-template></button>
-  
-  <button> <i class="material-icons md-36">share</i></button>
-  <div class="dropdown">
-      <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
-      <div class="dropdown-content">
-       <ul>
-         <li class="coll" routerLink="/detail/{{anime.id}}" routerLinkActive="router-link-active">Dettagli </li>
-       </ul>
-        
-        
-        
-      </div>
-    
-  
-    
+<div class="wrapper" *ngFor="let anime of filtered">
+    <div class="box a">
+        <label id="idAnime">Id Anime : {{anime.id}}</label>
+    </div>
+    <img class="d" src="{{anime.imgpath}}">
+    <div class="box b">
+        <label id="titolo">Titolo : {{anime.getTitolo() | uppercase}}</label>
+    </div>
+    <div class="box c">
+        <button (click)="isFavorite(anime)"> <i *ngIf="anime.getFavorite(); else unf"
+          class="material-icons md-36">favorite</i>
+        <ng-template #unf>
+          <i class="material-icons md-36">favorite_border</i>
+        </ng-template>
+      </button>
+
+        <button> <i class="material-icons md-36">share</i></button>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="material-icons md-36">menu</i></button>
+            <div class="dropdown-content">
+                <ul>
+                    <li routerLink="/detail/{{anime.id}}" routerLinkActive="router-link-active">Dettagli</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 
 
 </div>

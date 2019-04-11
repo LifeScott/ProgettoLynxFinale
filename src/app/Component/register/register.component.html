@@ -1,0 +1,37 @@
+<section>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div>
+            <img id="logo" src="assets/Logo.png">
+        </div>
+        <i class="material-icons md-36">person</i>
+        <input formControlName="firstname" placeholder="Nome">
+        <p [hidden]="registerForm.get('firstname').status === 'VALID' || registerForm.get('firstname').pristine">Nome
+            obbligatorio</p>
+        <i class="material-icons md-36">person</i>
+        <input formControlName="lastname" placeholder="Cognome">
+        <p [hidden]="registerForm.get('lastname').status === 'VALID' || registerForm.get('lastname').pristine">Cognome
+            obbligatorio</p>
+        <i class="material-icons md-36">supervisor_account</i>
+        <input formControlName="gender" placeholder="Genere">
+        <p [hidden]="registerForm.get('gender').status === 'VALID' || registerForm.get('gender').pristine">Genere
+            obbligatorio</p>
+        <i class="material-icons md-36">email</i>
+        <input formControlName="email" placeholder="Email">
+        <p [hidden]="registerForm.get('email').status === 'VALID' || registerForm.get('email').pristine">Email
+            obbligatoria</p>
+        <i class="material-icons md-36">call</i>
+        <input formControlName="telephone" placeholder="Telefono">
+        <p [hidden]="registerForm.get('telephone').status === 'VALID' || registerForm.get('telephone').pristine">
+            Telefono
+            obbligatorio</p>
+        <i class="material-icons md-36">https</i>
+        <input formControlName="password" placeholder="Password">
+        <p [hidden]="registerForm.get('password').status === 'VALID' || registerForm.get('password').pristine">
+            Password
+            obbligatoria</p>
+        <button type="submit" class='btn' [disabled]="registerForm.status === 'INVALID'">Registrati</button>
+
+        <button id="btn" (click)="toLogPage()"><i class="material-icons md-48">clear</i></button>
+    </form>
+</section>
